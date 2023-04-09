@@ -19,8 +19,8 @@ pipeline {
         stage('Build Stage') {
             steps {
                // bat 'C:\\ProgramData\\Jenkins\\.jenkins\\workspace\\dotnet-demo\\HelloWorld.sln --configuration Release'
-                bat 'msbuild HelloWorld.sln /target:BigProject_NetFrameworkApp /p:Configuration=Release'
-                bat ""${tool 'MSBuild'}\\msbuild" HelloWorld.sln /p:Configuration=Release"
+                bat "C:\Program Files (x86)\Microsoft Visual Studio\2017\BuildTools\MSBuild\15.0\Bin\MSBuild.exe" HelloWorld.sln /target:BigProject_NetFrameworkApp /p:Configuration=Release'
+               // bat ""${tool 'MSBuild'}\\msbuild" HelloWorld.sln /p:Configuration=Release"
 
 
 
