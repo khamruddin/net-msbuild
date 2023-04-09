@@ -11,8 +11,9 @@ pipeline {
         
         stage('nuget package') {
             steps {
-                //bat ' nuget restore C:\\ProgramData\\Jenkins\\.jenkins\\workspace\\dotent-demo\\HelloWorld.sln --configuration Release'
+                // bat ' nuget restore C:\\ProgramData\\Jenkins\\.jenkins\\workspace\\dotent-demo\\HelloWorld.sln --configuration Release'
                // bat ' nuget restore "%WORKSPACE%\\HelloWorld.sln" '
+                echo "dddd"
             }
         }
         stage('Build Stage') {
