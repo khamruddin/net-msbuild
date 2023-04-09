@@ -19,7 +19,7 @@ pipeline {
         stage('Build Stage') {
             steps {
                 //bat 'C:\\ProgramData\\Jenkins\\.jenkins\\workspace\\dotent-demo\\HelloWorld.sln --configuration Release'
-                bat "\"${tool 'MSBuild 15.0'}\\msbuild\" HelloWorld.sln /p:Configuration=Release /p:Platform=\"Any CPU\" /p:ProductVersion=1.0.0.${env.BUILD_NUMBER}"
+                bat "\"${tool 'MSBuild 14.0'}\\msbuild\" HelloWorld.sln /p:Configuration=Release /p:Platform=\"Any CPU\" /p:ProductVersion=1.0.0.${env.BUILD_NUMBER}"
             }
         }
         
