@@ -20,6 +20,9 @@ pipeline {
             steps {
                // bat 'C:\\ProgramData\\Jenkins\\.jenkins\\workspace\\dotnet-demo\\HelloWorld.sln --configuration Release'
                 bat 'msbuild HelloWorld.sln /target:BigProject_NetFrameworkApp /p:Configuration=Release'
+                bat ""${tool 'MSBuild'}\\msbuild" HelloWorld.sln /p:Configuration=Release /p:Platform="Any CPU" /p:ProductVersion=1.0.0.${env.BUILD_NUMBER}"
+
+
 
                 //bat "\"${tool 'Msbuild'}\\msbuild\" HelloWorld.csproj /p:Configuration=Release /p:Platform=\"Any CPU\" /p:ProductVersion=1.0.0.${env.BUILD_NUMBER}"
                 //bat "msbuild.exe 'C:\\ProgramData\\Jenkins\\.jenkins\\workspace\\dotnet-demo\\HelloWorld.sln' -t:clean -t:build -restore /property:Configuration=Release -p:RestorePackagesConfig=true"
