@@ -18,8 +18,9 @@ pipeline {
         }
         stage('Build Stage') {
             steps {
-                //bat 'C:\\ProgramData\\Jenkins\\.jenkins\\workspace\\dotent-demo\\HelloWorld.sln --configuration Release'
-                bat "\"${tool 'Msbuild'}\\msbuild\" HelloWorld.csproj /p:Configuration=Release /p:Platform=\"Any CPU\" /p:ProductVersion=1.0.0.${env.BUILD_NUMBER}"
+                //bat 'C:\\ProgramData\\Jenkins\\.jenkins\\workspace\\dotnet-demo\\HelloWorld.sln --configuration Release'
+                //bat "\"${tool 'Msbuild'}\\msbuild\" HelloWorld.csproj /p:Configuration=Release /p:Platform=\"Any CPU\" /p:ProductVersion=1.0.0.${env.BUILD_NUMBER}"
+                bat "msbuild.exe \"${WORKSPACE}\dotnet-demo\HelloWorld.sln\" -t:clean -t:build -restore /property:Configuration=Release -p:RestorePackagesConfig=true"
             }
         }
         
